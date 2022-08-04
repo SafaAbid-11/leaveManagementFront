@@ -1,0 +1,61 @@
+<app-page-title [heading]="heading" [subheading]="subheading" [icon]="icon"></app-page-title>
+
+<div class="col-lg-6">
+    <div class="main-card mb-3 card">
+      <div class="card-body">
+        <h5 class="card-title">Demandes de congés et absences </h5>
+        <div class="table-responsive">
+          <table class="mb-0 table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Début</th>
+                <th>Fin</th>
+                <th>Durée d'absence</th>
+                <th>Type de congé</th>
+                <th>A traiter par </th>
+                <th> Statut</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-title-actions">
+    <button (click)="openModal()"
+    type="button" class="btn-shadow d-inline-flex align-items-center btn btn-success">
+      <fa-icon [icon]="faPlus" class="mr-2"></fa-icon>
+      Créer une nouvelle demande
+    </button>
+    
