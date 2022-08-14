@@ -1,0 +1,50 @@
+<app-page-title [heading]="heading" [subheading]="subheading" [icon]="icon"></app-page-title>
+
+<ul ngbNav #nav="ngbNav" class="nav-tabs tabs-animated tabs-animated-shadow">
+  <li ngbNavItem>
+    <ng-template ngbNavContent>
+      <div class="card main-card mb-3">
+        <div class="card-body">
+          <form [formGroup]="this.formGroup" class="needs-validation" novalidate 
+          
+          (validSubmit)="handleValidSubmit()">
+            
+            <div class="form-row">
+              <div class="col-md-6 mb-3 form-group">
+                <label for="validationCustom01">Type de congé</label>
+                <input formControlName="typeConge" 
+                type="text" class="form-control" id="validationCustom01" placeholder="Type de Congé" required>
+              </div>
+              <div class="col-md-3 mb-3 form-group">
+                <label for="validationCustom02">Date de début</label>
+                <input formControlName="dateDeb" 
+                type="text" class="form-control" id="validationCustom02" placeholder="Date de début" required>
+              </div>
+              <div class="col-md-3 mb-3 form-group">
+                  <label for="validationCustom03">Date de fin</label>
+                  <input formControlName="dateFin" 
+                   type="text" class="form-control" id="validationCustom03" placeholder="Date de fin" required>
+                </div>
+                <div class="col-md-3 mb-3 form-group">
+                  <label for="validationCustom04">Durée d'absence</label>
+                  <input formControlName="durée" 
+                   type="text" class="form-control" id="validationCustom04" placeholder="Durée d'absence" required>
+                </div>
+
+                <div class="col-md-3 mb-3 form-group">
+                    <label for="validationCustom05">Description</label>
+                    <textarea  formControlName="description"  
+                    type="text" class="form-control" id="validationCustom05" placeholder="Description" required></textarea>
+                </div>
+            </div>
+            
+            <button class="btn btn-secondary" (click)="this.handleReset()" type="button">Annuler</button>
+            <button class="btn btn-success ml-2"  type="submit">Demander</button>
+          </form>
+
+        </div>
+      </div>
+    </ng-template>
+  </li>
+</ul>
+<div [ngbNavOutlet]="nav"></div>

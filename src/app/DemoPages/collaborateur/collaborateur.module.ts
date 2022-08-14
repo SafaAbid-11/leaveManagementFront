@@ -7,8 +7,6 @@ import { ConsulterPlanningComponent } from './consulter-planning/consulter-plann
 @NgModule({
   declarations: [
     ConsulterPlanningComponent,
-    
-   
   ],
   imports: [
     CommonModule,

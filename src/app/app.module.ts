@@ -11,7 +11,6 @@ import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { SharedModule } from './shared/shared.module';
 // BOOTSTRAP COMPONENTS
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -139,6 +138,8 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
 
   ],
   imports: [
+      ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),
+    
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -194,8 +195,6 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
 
     MatCheckboxModule,
 
-
-    SharedModule
 
   ],
   providers: [

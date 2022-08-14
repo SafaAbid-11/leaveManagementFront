@@ -1,5 +1,6 @@
 <app-page-title [heading]="heading" [subheading]="subheading" [icon]="icon"></app-page-title>
 
+
 <div class="col-lg-6">
     <div class="main-card mb-3 card">
       <div class="card-body">
@@ -17,34 +18,18 @@
                 <th> Statut</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
+            <tbody >
+              <tr *ngFor="let request of requests "
+              >
+                <td>{{request.id}}</td>
+                <td>{{request.startDate}}</td>
+                <td>{{request.endDate}}</td>
+                <td>{{request.nbjAbs}}</td>
+                <td>{{request.leaveType.leaveTitle}}</td>
+                <td>{{request.collaborator.respo}}</td>
+                <td>{{request.status}}</td>
+            </tr>
+             
             </tbody>
           </table>
         </div>
@@ -58,4 +43,6 @@
       <fa-icon [icon]="faPlus" class="mr-2"></fa-icon>
       Créer une nouvelle demande
     </button>
-    
+    </div>
+
+ 

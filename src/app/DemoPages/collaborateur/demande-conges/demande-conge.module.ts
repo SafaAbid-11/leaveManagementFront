@@ -7,9 +7,10 @@ import { DemandeCongeRoutingModule } from './demande-conge-routing.module';
 import { DemandeCongesComponent } from './demande-conges.component';
 import { PageTitleModule } from '../../../Layout/Components/page-title/page-title.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
-  declarations: [DemandeCongesComponent],
+  declarations: [DemandeCongesComponent, FormComponent],
   imports: [
     CommonModule,
     DemandeCongeRoutingModule,
