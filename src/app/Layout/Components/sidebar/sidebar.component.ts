@@ -50,7 +50,7 @@ export class SidebarComponent implements OnInit {
       }
     });
 
-    this.extraParameter = this.activatedRoute.snapshot.firstChild.routeConfig.path;
+  //  this.extraParameter = this.activatedRoute.snapshot.firstChild.routeConfig.path;
 
   }
 

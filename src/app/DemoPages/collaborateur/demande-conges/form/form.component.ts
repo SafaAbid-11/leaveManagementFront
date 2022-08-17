@@ -5,8 +5,8 @@ import { Collaborateur } from 'src/app/entities/collaborateur';
 import { Router } from '@angular/router';
 import { LeaveType } from 'src/app/entities/leave-type';
 import { Request } from 'src/app/entities/request';
-import { LeaveTypeService } from '../Services/leave-type.service';
-import { RequestService } from '../Services/request.service';
+import { LeaveTypeService } from '../../../../Services/leave-type.service';
+import { RequestService } from '../../../../Services/request.service';
 
 @Component({
   selector: 'app-form',
@@ -48,23 +48,23 @@ export class FormComponent implements OnInit {
      this.leaveTypeService.getLeaveTypeByTitle(this.formGroup.value.typeConge)
      .subscribe(data=>{
       console.log(data);
-      this.request.leaveType=data;
+      this.request.leaveType= JSON.parse(JSON.stringify(data));
+     
     })
      this.request.startDate=this.formGroup.value.dateDeb;
      this.request.endDate=this.formGroup.value.dateFin;
      this.request.nbjAbs=this.formGroup.value.durée;
      this.request.leaveDesc=this.formGroup.value.description;
+     this.request.status="en attente";
      console.log(this.request);
-     
     this.saveRequest();
     this.activeModal.close();
     this.router.navigate(['/collaborateur/demandeConges']);
   }
-
   private saveRequest() {
-    this.requestService.createRequest(this.request)
-    .subscribe(data=> {
-      console.log("this is my request",data);
+    this.requestService.createRequest(JSON.parse(JSON.stringify(this.request)))
+    .subscribe(data1=> {
+      console.log("this is my request",data1);
       
     }, error =>console.log(error)
     );

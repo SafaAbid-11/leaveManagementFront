@@ -10,16 +10,15 @@ const routes: Routes = [
     path: '',
     component: BaseLayoutComponent,
     children: [
-     
+      {
+        path: 'gestionnaire',
+        loadChildren: () => import('./DemoPages/gestionnaire/gestionnaire.module').then(m => m.GestionnaireModule)
+      },
       {
         path: 'collaborateur',
         loadChildren: () => import('./DemoPages/Collaborateur/Collaborateur.module').then(m => m.CollaborateurModule)
       },
-      /* {
-        path: 'elements',
-        loadChildren: () => import('./DemoPages/Elements/Elements.module').then(m => m.ElementsModule)
-      }, */
-     
+
       {
         path: '',
         redirectTo: '',

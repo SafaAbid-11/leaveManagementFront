@@ -19,11 +19,11 @@
           <div class="vsm-list">
             <ngb-accordion [destroyOnHide]="false" [closeOthers]="true" #acc="ngbAccordion"
               activeIds="{{extraParameter}}">
-              <ngb-panel>
+             <!--  <ngb-panel>
                 <ng-template ngbPanelHeader>
                   <div class="vsm-header">Main Navigation</div>
                 </ng-template>
-              </ngb-panel>
+              </ngb-panel> -->
               <ngb-panel id="dashboards">
                 <ng-template ngbPanelHeader>
                   <button ngbPanelToggle class="vsm-link">
@@ -41,7 +41,7 @@
                         </a>
                       </div>
                       <div class="vsm-item">
-                        <a [routerLink]="['/dashboards/advertisement/']" routerLinkActive="active-item" class="vsm-link">
+                        <a [routerLink]="['/collaborateur/consulterPlanning']" routerLinkActive="active-item" class="vsm-link">
                           <span class="vsm-title">Consulter le Planning</span>
                         </a>
                       </div>
@@ -55,11 +55,7 @@
                           <span class="vsm-title">Helpdesk</span>
                         </a>
                       </div>
-                      <div class="vsm-item">
-                        <a routerLink="/dashboards/monitoring" routerLinkActive="active-item" class="vsm-link">
-                          <span class="vsm-title">Monitoring</span>
-                        </a>
-                      </div>
+                      
                     </div>
                   </div>
                 </ng-template>
@@ -77,7 +73,7 @@
                     <div class="vsm-list">
                      
                       <div class="vsm-item">
-                        <a routerLinkActive="active-item" routerLink="/pages/login-boxed" class="vsm-link">
+                        <a routerLinkActive="active-item" [routerLink]="['/gestionnaire/validerdemande']" class="vsm-link">
                           <span class="vsm-title">Valider</span>
                         </a>
                       </div>
@@ -100,36 +96,7 @@
                   </div>
                 </ng-template>
               </ngb-panel>
-              <ngb-panel id="apps">
-                <ng-template ngbPanelHeader>
-                  <button ngbPanelToggle class="vsm-link">
-                    <i class="vsm-icon pe-7s-plugin"></i>
-                    <span class="vsm-title">Applications</span>
-                    <i class="vsm-arrow"></i>
-                  </button>
-                </ng-template>
-                <ng-template ngbPanelContent>
-                  <div class="vsm-dropdown">
-                    <div class="vsm-list">
-                      <div class="vsm-item">
-                        <a routerLinkActive="active-item" routerLink="/apps/mailbox" class="vsm-link">
-                          <span class="vsm-title">Mailbox</span>
-                        </a>
-                      </div>
-                      <div class="vsm-item">
-                        <a routerLinkActive="active-item" routerLink="/apps/chat" class="vsm-link">
-                          <span class="vsm-title">Chat</span>
-                        </a>
-                      </div>
-                      <div class="vsm-item">
-                        <a routerLinkActive="active-item" routerLink="/apps/material-tabs" class="vsm-link">
-                          <span class="vsm-title">Material Tabs</span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </ng-template>
-              </ngb-panel>
+              
             </ngb-accordion>
           </div>
         </div>

@@ -2,10 +2,11 @@ import { Component,ViewChild, OnInit } from '@angular/core';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import {Router} from '@angular/router'; // import router from angular router
 import {Request} from '../../../entities/request';
-import { RequestService} from './Services/request.service';
+import { RequestService} from '../../../Services/request.service';
 import { LeaveType } from 'src/app/entities/leave-type';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormComponent } from './form/form.component';
+
 @Component({
   selector: 'app-demande-conges',
   templateUrl: './demande-conges.component.html',

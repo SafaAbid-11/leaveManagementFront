@@ -27,7 +27,16 @@
                 <td>{{request.nbjAbs}}</td>
                 <td>{{request.leaveType.leaveTitle}}</td>
                 <td>{{request.collaborator.respo}}</td>
-                <td>{{request.status}}</td>
+                <td *ngIf="request.status==='refusée' ">
+                  <div  class="badge badge-pill badge-danger">{{request.status}}</div>
+                            </td>
+                            <td *ngIf=" request.status==='acceptée' ">
+                            
+                              <div class="badge badge-pill badge-success">{{request.status}}</div>
+                            </td>
+                            <td *ngIf=" request.status==='en attente' ">
+                              <div #third class="badge badge-pill badge-warning">{{request.status}}</div>
+                            </td>
             </tr>
              
             </tbody>

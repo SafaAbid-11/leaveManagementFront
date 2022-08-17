@@ -1,0 +1,69 @@
+<app-page-title [heading]="heading" [subheading]="subheading" [icon]="icon"></app-page-title>
+
+
+<div class="col-lg-6">
+    <div class="main-card mb-3 card">
+      <div class="card-body">
+        <h5 class="card-title">Liste des demandes à Accepter/Refuser </h5>
+        <div class="table-responsive">
+          <table class="mb-0 table">
+            <thead>
+              <tr>
+                <th>Statut</th>
+                <th>Date demande</th>
+                <th>Prénom</th>
+                <th>Nom</th>
+                <th>Nb jours</th>
+                <th>Date début </th>
+                <th> Date fin</th>
+                <th>Accepter/Refuser</th>
+              </tr>
+            </thead>
+            <tbody >
+              <tr  *ngFor="let request of requests "
+              >
+<td *ngIf="request.status==='refusée' ">
+  <div  class="badge badge-pill badge-danger">{{request.status}}</div>
+            </td>
+            <td *ngIf=" request.status==='acceptée' ">
+            
+              <div class="badge badge-pill badge-success">{{request.status}}</div>
+            </td>
+            <td *ngIf=" request.status==='en attente' ">
+              <div #third class="badge badge-pill badge-warning">{{request.status}}</div>
+            </td>
+
+       
+                <td>{{request.creationDate}}</td>
+                <td>{{request.collaborator.firstName}}</td>
+                <td>{{request.collaborator.lastName}}</td>
+                <td>{{request.nbjAbs}}</td>
+                <td>{{request.startDate}}</td>
+                <td>{{request.endDate}}</td>
+
+                <td class="text-center">
+                  <div role="group" class="btn-group-sm btn-group">
+                    <button (click)="accept(request.id)" class="btn-shadow btn btn-primary">Accepter</button>
+                    <button (click)="deny(request.id)" class="btn-shadow btn btn-primary">Refuser</button>
+                    <button (click)="openModal() ; deny(request.id)" class="btn-shadow btn btn-primary">Contre proposition</button>
+                  </div>
+                </td>
+            </tr>
+             
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="page-title-actions">
+   
+    <button 
+    type="button" class="btn-shadow d-inline-flex align-items-center btn btn-success">
+      <fa-icon [icon]="faPlus" class="mr-2"></fa-icon>
+      Refuser la demande
+    </button>
+    </div> -->
+
+ 

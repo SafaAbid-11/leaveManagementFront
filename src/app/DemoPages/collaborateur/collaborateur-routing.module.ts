@@ -13,6 +13,10 @@ const routes: Routes = [
     path: 'demandeConges',
     loadChildren: () => import('./demande-conges/demande-conge.module').then(m => m.DemandeCongeModule)
   },
+  {
+    path: 'consulterPlanning',
+    loadChildren: () => import('./consulter-planning/consulter-planning.module').then(m => m.ConsulterPlanningModule)
+  },
   
 ]
   }

@@ -7,5 +7,4 @@ export class LeaveType {
 	
 	leaveTitle :string ;
 	
-	  leaveRequests :Array<Request>;
 }

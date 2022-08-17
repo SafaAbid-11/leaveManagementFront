@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CollaborateurRoutingModule } from './collaborateur-routing.module';
+import { GestionnaireRoutingModule } from './gestionnaire-routing.module';
 
 @NgModule({
   declarations: [
+    
   ],
   imports: [
     CommonModule,
-    CollaborateurRoutingModule
+    GestionnaireRoutingModule,
+   
   ]
 })
-export class CollaborateurModule { }
+export class GestionnaireModule { }
